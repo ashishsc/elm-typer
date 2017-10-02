@@ -4,7 +4,7 @@ import Html
 import String
 import Time
 import Types exposing (..)
-import View exposing (view)
+import View exposing (view, viewWithTerminal)
 
 
 init : ( Model, Cmd Msg )
@@ -35,7 +35,7 @@ tickSub model =
 main : Program Never Model Msg
 main =
     Html.program
-        { view = view
+        { view = viewWithTerminal
         , init = init
         , update = update
         , subscriptions = tickSub
